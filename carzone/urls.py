@@ -23,4 +23,10 @@ from django.conf import settings
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',include('pages.urls')),
+    path('cars/', include('cars.urls')),
+    path('',include('cars.urls')),
+    path('accessories/', include('accessories.urls')),
+    path('',include('accessories.urls')),
+
+
 ]+ static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)
