@@ -161,3 +161,11 @@ MESSAGE_TAGS = {
 }
 
 SITE_ID=1
+    
+    #email_sending
+    
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'iamadarshprakash@gmail.com'
+EMAIL_HOST_PASSWORD = 'Adarsh456@'
+EMAIL_USE_TLS = True

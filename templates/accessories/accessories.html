@@ -1,6 +1,9 @@
 {% extends 'base.html' %}
 
+{% block title %} | Accessories {% endblock %}
 {% block content %}
+{%load static%}
+{% load humanize %}
 <!-- Sub banner start -->
 <div class="sub-banner overview-bgi">
     <div class="container breadcrumb-area">
@@ -14,200 +17,74 @@
     </div>
 </div>
 <!-- Sub Banner end -->
- <!-- shop section -->
 
-  <section class="shop_section layout_padding">
+
+<!-- Rent car start -->
+<div class="featured-car content-area">
     <div class="container">
-      <div class="heading_container heading_center">
-        <h2>
-          Latest Watches
-        </h2>
-      </div>
-      <div class="row">
-        <div class="col-md-6 ">
-          <div class="box">
-            <a href="">
-              <div class="img-box">
-                <img src="images/w1.png" alt="">
-              </div>
-              <div class="detail-box">
-                <h6>
-                  Smartwatch
-                </h6>
-                <h6>
-                  Price:
-                  <span>
-                    $300
-                  </span>
-                </h6>
-              </div>
-              <div class="new">
-                <span>
-                  Featured
-                </span>
-              </div>
-            </a>
-          </div>
+        <!-- Main title -->
+        <div class="main-title">
+            <h1>Car <span>Accessories</span></h1>
+            <p>Best Quality Products! </p>
         </div>
-        <div class="col-sm-6 col-xl-3">
-          <div class="box">
-            <a href="">
-              <div class="img-box">
-                <img src="images/w2.png" alt="">
-              </div>
-              <div class="detail-box">
-                <h6>
-                  Smartwatch
-                </h6>
-                <h6>
-                  Price:
-                  <span>
-                    $125
-                  </span>
-                </h6>
-              </div>
-              <div class="new">
-                <span>
-                  New
-                </span>
-              </div>
-            </a>
-          </div>
-        </div>
-        <div class="col-sm-6 col-xl-3">
-          <div class="box">
-            <a href="">
-              <div class="img-box">
-                <img src="images/w3.png" alt="">
-              </div>
-              <div class="detail-box">
-                <h6>
-                  Smartwatch
-                </h6>
-                <h6>
-                  Price:
-                  <span>
-                    $110
-                  </span>
-                </h6>
-              </div>
-              <div class="new">
-                <span>
-                  New
-                </span>
-              </div>
-            </a>
-          </div>
-        </div>
-        <div class="col-sm-6 col-xl-3">
-          <div class="box">
-            <a href="">
-              <div class="img-box">
-                <img src="images/w4.png" alt="">
-              </div>
-              <div class="detail-box">
-                <h6>
-                  Smartwatch
-                </h6>
-                <h6>
-                  Price:
-                  <span>
-                    $145
-                  </span>
-                </h6>
-              </div>
-              <div class="new">
-                <span>
-                  New
-                </span>
-              </div>
-            </a>
-          </div>
-        </div>
-        <div class="col-sm-6 col-xl-3">
-          <div class="box">
-            <a href="">
-              <div class="img-box">
-                <img src="images/w5.png" alt="">
-              </div>
-              <div class="detail-box">
-                <h6>
-                  Smartwatch
-                </h6>
-                <h6>
-                  Price:
-                  <span>
-                    $195
-                  </span>
-                </h6>
-              </div>
-              <div class="new">
-                <span>
-                  New
-                </span>
-              </div>
-            </a>
-          </div>
-        </div>
-        <div class="col-sm-6  col-xl-3">
-          <div class="box">
-            <a href="">
-              <div class="img-box">
-                <img src="images/w6.png" alt="">
-              </div>
-              <div class="detail-box">
-                <h6>
-                  Smartwatch
-                </h6>
-                <h6>
-                  Price:
-                  <span>
-                    $170
-                  </span>
-                </h6>
-              </div>
-              <div class="new">
-                <span>
-                  New
-                </span>
-              </div>
-            </a>
-          </div>
-        </div>
-        <div class="col-sm-6 col-xl-3">
-          <div class="box">
-            <a href="">
-              <div class="img-box">
-                <img src="images/w1.png" alt="">
-              </div>
-              <div class="detail-box">
-                <h6>
-                  Smartwatch
-                </h6>
-                <h6>
-                  Price:
-                  <span>
-                    $230
-                  </span>
-                </h6>
-              </div>
-              <div class="new">
-                <span>
-                  New
-                </span>
-              </div>
-            </a>
-          </div>
-        </div>
-      </div>
-      <div class="btn-box">
-        <a href="">
-          View All
-        </a>
-      </div>
     </div>
-  </section>
+</div>
+<!-- Rent car end -->
 
-  <!-- end shop section -->
+    <!--Section: Products v.3-->
+    <section class="text-center mb-4">
+
+      <div class="row wow fadeIn">
+
+        {% for accessorie in accessories %}
+        <div class="col-lg-3 col-md-6 mb-4">
+
+          <div class="card">
+
+            <div class="view overlay">
+              {% comment %}
+                <img src="https://mdbootstrap.com/img/Photos/Horizontal/E-commerce/Vertical/12.jpg"
+                class="card-img-top" >
+                <img src="{{ accessorie.image.url }}" class="card-img-top">
+              <a href="{{ accessorie.title }}">
+                <div class="mask rgba-white-slight"></div>
+              </a>
+                {% endcomment %}
+            </div>
+
+            <div class="card-body text-center">
+              <a href="" class="grey-text">
+               <h5>{{ accessorie.get_category_display }}</h5>
+              </a>
+              <h5>
+                <strong>
+                  <a href="{{ accessorie.get_absolute_url }}" class="dark-grey-text">{{ accessorie.title }}
+                    <span class="badge badge-pill {{ accessorie.get_label_display }}-color">NEW</span>
+                  </a>
+                </strong>
+              </h5>
+
+              <h4 class="font-weight-bold blue-text">
+                <strong>₹
+                  {% if accessorie.discount_price %}
+                  {{ accessorie.discount_price }}
+                  {% else %}
+                  {{ accessorie.price }}
+                  {% endif %}
+                </strong>
+              </h4>
+
+            </div>
+
+          </div>
+
+        </div>
+        {% endfor %}
+      </div>
+
+    </section>
+    <!--Section: Products v.3-->
+
+
 
 {% endblock %}
