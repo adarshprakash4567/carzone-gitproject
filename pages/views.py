@@ -4,7 +4,7 @@ from cars.models import Car
 from django.contrib.auth.models import User
 from django.core.mail import send_mail
 from django.contrib import messages
-from accessories.models import Accessories
+from accessories.models import Accessorie
 
 # Create your views here.
 def home(request):
@@ -29,10 +29,9 @@ def home(request):
     return render(request, 'pages/home.html',data)
 
 def accessories(request):
-    accessories = Accessories.objects.all()
+    accessories = Accessorie.objects.all()
     data = {
-        'accessories'
-        : accessories,
+        'accessories': accessories,
     }
     return render(request,'pages/accessories.html',data)
 def about(request):
