@@ -2,6 +2,7 @@
 
 {% block title %} | Contact {% endblock %}
 {%block content%}
+{%load static%}
 
 <!-- Sub banner start -->
 <div class="sub-banner overview-bgi">
@@ -23,7 +24,7 @@
         <!-- Main title -->
         <div class="main-title text-center">
             <h1>Contact <span>Us</span></h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod</p>
+            <p>Here you can contact with our admin by filling details</p>
         </div>
         <form action="{% url 'contact' %}" method="POST" enctype="multipart/form-data">
             {% include 'includes/messages.html' %}
@@ -71,7 +72,7 @@
                             </div>
                             <div class="detail">
                                 <h5>Phone:</h5>
-                                <p><a href="#">0477 8556 552</a></p>
+                                <p><a href="#">+91 9744149409</a></p>
                             </div>
                         </div>
                         <div class="ci-box">
@@ -80,7 +81,7 @@
                             </div>
                             <div class="detail">
                                 <h5>Email:</h5>
-                                <p><a href="#">info@themevessel.com</a></p>
+                                <p><a href="#">adarshprakash456@gmail.com</a></p>
                             </div>
                         </div>
                         <div class="ci-box">
@@ -89,7 +90,7 @@
                             </div>
                             <div class="detail">
                                 <h5>Web:</h5>
-                                <p><a href="#">info@themevessel.com</a></p>
+                                <p><a href="#">car-Zone.com</a></p>
                             </div>
                         </div>
                         <div class="ci-box mb-0">
@@ -98,7 +99,7 @@
                             </div>
                             <div class="detail">
                                 <h5>Fax:</h5>
-                                <p><a href="#">+0477 85X6 552</a></p>
+                                <p><a href="#">+91 9876543210</a></p>
                             </div>
                         </div>
                     </div>
@@ -108,5 +109,9 @@
     </div>
 </div>
 <!-- Contact 2 end -->
+<div>
+
+
+
 
 {%endblock%}
